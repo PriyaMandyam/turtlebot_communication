@@ -1,0 +1,7 @@
+ipaddress = '172.29.64.201'
+rosinit(ipaddress)
+soundpub = rospublisher('/mobile_base/commands/sound', 'kobuki_msgs/Sound')
+soundmsg = rosmessage('kobuki_msgs/Sound');
+soundmsg.Value = 6;      % Any number 0-6
+send(soundpub,soundmsg);
+rosshutdown
